@@ -1,0 +1,20 @@
+version: "3"
+volumes:
+ httpd1:
+ httpd2:
+services: 
+ cn1: 
+  image: busybox
+  command: sleep 5000
+  ports:
+  - 2222:80
+  volumes:
+  - httpd1:/var/www
+ cn2:
+  image: busybox
+  command: sleep 5000  
+  ports:
+  - 2223:80
+  volumes:
+  - httpd2:/var/www
+   
